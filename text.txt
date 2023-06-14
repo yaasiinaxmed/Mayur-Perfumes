@@ -1,0 +1,5 @@
+process.env.REACT_APP_MERCHANT_U_ID
+process.env.REACT_APP_MERCHANT_API_USER_ID
+process.env.REACT_APP_MERCHANT_API_KEY
+import.meta.env.VITE_MERCHANT_API_USER_ID
+import.meta.env.VITE_MERCHANT_U_ID
