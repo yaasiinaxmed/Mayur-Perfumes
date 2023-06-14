@@ -58,10 +58,10 @@ const Payment = () => {
 
         // console.log(info)
 
-        // if(info.length == 1) {
-        //   setUpdated(!updated);
-        //   toast.success("Succesfully ordered");
-        // }else {
+        if(info.length == 1) {
+          setUpdated(!updated);
+          toast.success("Succesfully ordered");
+        }else {
           if(data.responseMsg.split("ERRCODE")[2].includes(4004)) {
             toast.error("User rejected")
             setUpdated(!updated);
@@ -76,9 +76,9 @@ const Payment = () => {
             toast.error("Haraaga xisaabtaadu kuguma filna")
             setUpdated(!updated)
           }
-        // }
+        }
 
-        console.log(data);
+        // console.log(data);
 
     } catch (error) {
         console.log(error)
