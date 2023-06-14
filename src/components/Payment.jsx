@@ -56,18 +56,25 @@ const Payment = () => {
 
         const info = data.responseMsg.split("ERRCODE");
 
+        console.log(info)
+
         if(info.length == 1) {
+          setUpdated(!updated);
           toast.success("Succesfully ordered");
-          setUpdated(updated);
         }else {
           if(data.responseMsg.split("ERRCODE")[2].includes(4004)) {
-            toast.error("Request is rejected")
-            setUpdated(updated);
+            toast.error("User rejected")
+            setUpdated(!updated);
           }
 
           if(data.responseMsg.split("ERRCODE")[2].includes(6002)) {
-            toast.success("Number-ka Sirta ah waa Khalad")
-            setUpdated(updated);
+            toast.error("Numberka Sirta ah waa Khalad")
+            setUpdated(!updated);
+          }
+
+          if(data.responseMsg.split("ERRCODE")[2].includes(8001)) {
+            toast.error("Haraaga xisaabtaadu kuguma filna")
+            setUpdated(!updated)
           }
         }
 
