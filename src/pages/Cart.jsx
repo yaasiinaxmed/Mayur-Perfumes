@@ -5,11 +5,12 @@ import useShop from '../ShopContext';
 
 function Cart() {
   const {products} = useShop();
+
+  if(products.length <= 0) return <h1>Cart Is Empty...</h1>
   
   return (
     <div className='cart-container'>
-     
-      {products.length == 0 ? <p style={{color: "#555", fontSize: "20px"}}>Cart Is Empty.... </p> :  <CartProducts/>}
+      <CartProducts/>
       <Payment/>
     </div>
   )
