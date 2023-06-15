@@ -332,6 +332,32 @@ form {
     display: none;
 }
 
+footer {
+    width: 100%;
+    padding: 10px;
+    /* background: rgba(221, 221, 210, 0.1); */
+    text-align: center;
+    font-size: 18px;
+}
+
+footer p {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #00b2ff;
+}
+
+footer a {
+    color: #222;
+}
+
+footer ion-icon {
+    margin: 4px;
+}
+
 @media (max-width: 930px) {
     /* .menu {
         padding: 0 10%;

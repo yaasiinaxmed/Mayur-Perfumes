@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from './Product'
+import Footer from './Footer';
 
 const products = [
     {
@@ -47,6 +48,7 @@ function Products() {
 		<Product key={product.id} product={product} />
     ))
 	}
+    <Footer/>
     </div>
   )
 };
