@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+    useEffect(() => {
+        document.title = "Home | Mayur Perfumes"
+    }, [])
+    
     return (
         <div className="home">
             <h1>Mayur <span className="text">Perfumes</span></h1>
