@@ -54,7 +54,8 @@ const Payment = () => {
         const {data} = await axios.post("https://api.waafipay.net/asm", body)
         setLoading(false)
 
-        const info = data.responseMsg.split("ERRCODE");
+        const info = data.responseMsg;
+        console.log(info)
 
         // console.log(info)
 
@@ -62,18 +63,23 @@ const Payment = () => {
           setUpdated(!updated);
           toast.success("Succesfully ordered");
         }else {
-          if(data.responseMsg.split("ERRCODE")[2].includes(4004)) {
+          if(data.responseMsg === "RCS_USER_REJECTED") {
             toast.error("User rejected")
             setUpdated(!updated);
           }
 
-          if(data.responseMsg.split("ERRCODE")[2].includes(6002)) {
-            toast.error("Numberka Sirta ah waa Khalad")
+          if(data.responseMsg === "Payment Failed ([-EVCPlus-] Nambarka Sirta ah waa Khalad)") {
+            toast.error("Payment Failed ([-EVCPlus-] Nambarka Sirta ah waa Khalad)")
             setUpdated(!updated);
           }
 
-          if(data.responseMsg.split("ERRCODE")[2].includes(8001)) {
-            toast.error("Haraaga xisaabtaadu kuguma filna")
+          if(data.responseMsg === "Payment Failed (Subscriber Not Found, to register please dial *770#. for help call 141/101 or whatsapp +252615000000)") {
+            toast.error("Payment Failed (Subscriber Not Found, to register please dial *770#. for help call 141/101 or whatsapp +252615000000)")
+            setUpdated(!updated)
+          }
+
+          if(data.responseMsg === "Payment Failed (Haraaga xisaabtaadu kuguma filna, mobile No: {SENDER_MOBILE_NO})") {
+            toast.error("Payment Failed (Haraaga xisaabtaadu kuguma filna, mobile No: {SENDER_MOBILE_NO})")
             setUpdated(!updated)
           }
         }

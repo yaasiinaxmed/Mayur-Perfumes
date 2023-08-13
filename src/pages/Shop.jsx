@@ -4,8 +4,8 @@ import { useEffect } from 'react'
 
 function Shop() {
   useEffect(() => {
-    document.title = "Home | Mayur Perfumes"
-}, [])
+    document.title = "Shop | Mayur Perfumes"
+  }, [])
 
   return (
     <Products/>

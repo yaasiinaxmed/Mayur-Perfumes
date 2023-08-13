@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "../style.css"
 import { useState } from "react";
 import useShop from "../ShopContext";
+import {IoMdClose} from 'react-icons/io'
 
 const Header = () => {
     const {products} = useShop();
@@ -12,7 +13,7 @@ const Header = () => {
         <div className="menu">
             <Link to="/" className="logo"><span style={{color: "#222"}}>Mayur</span> Perfumes</Link>
             <div className="menu-mobile" onClick={() => setMenu(!menu)}>
-                {menu ? <ion-icon name="close"></ion-icon> : <ion-icon name="menu"></ion-icon>}
+                {menu ? <IoMdClose/> : <ion-icon name="menu"></ion-icon>}
             
             </div>
             <dv className={`Links ${menu ? 'active' : ''}`}>

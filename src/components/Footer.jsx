@@ -1,9 +1,9 @@
 const Footer = () => {
     return (
         <footer>
-            <p>Created by <a href="https://yaasiinahmed.ml" target="_blank">Yaasiin Ahmed</a></p>
+            <p>Created by <a href="https://amesasolutions.com" target="_blank">Amesa Solutions</a></p>
             <a href="https://github.com/yaasiinaxmed" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-            <ion-icon name="logo-slack"></ion-icon>
+            <a href="https://www.facebook.com/AmesaSolutions"><ion-icon name="logo-facebook"></ion-icon></a>
         </footer>
     )
 }
